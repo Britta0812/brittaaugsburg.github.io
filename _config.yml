@@ -7,16 +7,15 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-US"
+locale                   : "en-UK"
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Britta Augsburg, PhD"
 title_separator          : "-"
 name                     : &name "Britta Augsburg"
 description              : &description "I am Associate Director at the IFS. My research focuses on how early-life environments—particularly sanitation, stimulation, and nutrition—shape child development and human capital formation. More broadly, I look at the constraints that limit effective service delivery and how policies and programmes can be designed, implemented, and sustained at scale."   # Update this with a general description of your site, this is the default if not overridden by a page
-url                      : https://Britta0812/brittaaugsburg.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
-                                                           # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+url                      : https://britta0812.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "britta0812/brittaaugsburg.github.io.github.io"
+repository               : "Britta0812/brittaaugsburg.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
