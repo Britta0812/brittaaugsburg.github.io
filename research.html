@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Britta Augsburg</title>
+  <title>Research | Britta Augsburg</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -200,12 +200,11 @@
     }
     .hero-photo {
       flex-shrink: 0;
-      width: 200px;
-      min-height: 280px;
+      width: 160px;
+      height: 200px;
       object-fit: cover;
       object-position: center top;
-      border: 1px solid var(--rule);
-      align-self: stretch;
+      border: 2px solid var(--rule);
       filter: grayscale(15%);
     }
     .hero-photo-placeholder {
@@ -558,8 +557,8 @@
     <div class="sidebar-name">Britta<br>Augsburg</div>
     <div class="sidebar-title">Associate Director<br><a href="https://www.ifs.org.uk" target="_blank" style="color:var(--accent);text-decoration:none;letter-spacing:0.12em;">Institute for Fiscal Studies</a></div>
     <nav>
-      <a href="index.html" class="active">About</a>
-      <a href="research.html">Publications</a>
+      <a href="index.html">About</a>
+      <a href="research.html" class="active">Publications</a>
       <a href="projects.html">Projects</a>
       <a href="cv.html">CV</a>
     </nav>
@@ -593,22 +592,298 @@
 
   
   <main class="main">
-    <!-- ABOUT -->
-    <section id="about" style="padding: 4rem 4rem 3rem; border-bottom: 2px solid var(--rule);">
-      <div style="display:flex; gap:2.5rem; align-items:flex-start;">
-        <img src="profile.jpg" alt="Britta Augsburg" class="hero-photo"
-             onerror="this.outerHTML='&lt;div class='hero-photo-placeholder'&gt;Add profile.jpg to show photo here&lt;/div&gt;'" />
-        <div>
-          <h1 style="font-family:'Source Sans 3',system-ui,sans-serif; font-weight:700; font-size:clamp(1.8rem,4vw,2.8rem); color:var(--ink); margin-bottom:0.2rem; line-height:1.15;">Britta Augsburg, PhD</h1>
-          <div style="font-size:0.95rem; color:var(--ink-light); margin-bottom:0.15rem;">Associate Director</div>
-          <div style="font-size:0.95rem; margin-bottom:2rem;">
-            <a href="https://www.ifs.org.uk" target="_blank" style="color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule);">Institute for Fiscal Studies</a>
-          </div>
-          <p style="font-size:1rem; line-height:1.7; color:var(--ink-light); max-width:580px; margin-bottom:0;">
-            I am a microeconomist working on how early-life environments and public service delivery shape human capital formation, with a focus on WASH (water, sanitation and hygiene), early childhood stimulation, and nutrition. My work uses randomised controlled trials and quasi-experimental methods, primarily in Sub-Saharan Africa and South Asia.
+    <!-- RESEARCH INTRO -->
+    <section id="research-intro" style="padding: 3rem 4rem 2rem; border-bottom: 2px solid var(--rule);">
+      <div class="section-label">Research</div>
+      <h2 class="section-title">Research Areas</h2>
+      <p style="font-size:1rem; line-height:1.75; color:var(--ink-light); max-width:680px; margin-bottom:2.5rem;">
+        My research focuses on how early-life environments—particularly sanitation, stimulation, and nutrition—shape child development and human capital formation. More broadly, I look at the constraints that limit effective service delivery and how policies and programmes can be designed, implemented, and sustained at scale. I work primarily in Sub-Saharan Africa and South Asia, using randomised controlled trials and quasi-experimental methods.
+      </p>
+      <div class="research-areas">
+        <div class="area-card wash">
+          <div class="area-tag">WASH &amp; Sanitation</div>
+          <h3>Water, Sanitation &amp; Hygiene</h3>
+          <p>
+            [Placeholder — feel free to send me a short paragraph describing your WASH work and I'll drop it in. For example: the countries you've worked in, the key questions you address, and any flagship projects.]
+          </p>
+        </div>
+        <div class="area-card stim">
+          <div class="area-tag">Early Stimulation</div>
+          <h3>Early Childhood Stimulation</h3>
+          <p>
+            [Placeholder — a short paragraph on your early childhood development work: programmes evaluated, countries, key themes such as delivery at scale, teacher quality, etc.]
+          </p>
+        </div>
+        <div class="area-card nutr">
+          <div class="area-tag">Nutrition</div>
+          <h3>Nutrition</h3>
+          <p>
+            [Placeholder — a short paragraph on your nutrition research: Healthy Start, food retail environments, pregnancy and early childhood nutrition, etc.]
           </p>
         </div>
       </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <div class="section-label">Publications</div>
+      <h2 class="section-title">Selected Publications</h2>
+
+      <div class="pub-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="wash">WASH</button>
+        <button class="filter-btn" data-filter="stim">Early Stimulation</button>
+        <button class="filter-btn" data-filter="nutr">Nutrition</button>
+        <button class="filter-btn" data-filter="other">Other</button>
+      </div>
+
+      <ul class="pub-list" id="pub-list">
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://www.sciencedirect.com/science/article/pii/S0304387824000658" target="_blank">Evidence on designing sanitation interventions</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With A. Foster, T. Johnson, M. Lipscomb · <span class="pub-journal">Journal of Development Economics</span>, Vol. 171, 2024</div>
+            <div class="pub-links">Coverage: <a href="https://voxdev.org/topic/health/policy-lessons-new-advances-sanitation-economics" target="_blank">VoxDev</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              Sanitation Marketing in Nigeria
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With L. Abramovsky et al. · <span class="pub-journal">World Development</span>, forthcoming</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1016/j.jdeveco.2023.103092" target="_blank">Sanitation and marriage markets in India: Evidence from the Total Sanitation Campaign</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With P. Rodriguez Lesmes, S. Gautam, J. P. Baquero · <span class="pub-journal">Journal of Development Economics</span>, Vol. 163, 2023</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1016/j.jdeveco.2023.103074" target="_blank">To invest or not to invest in sanitation: The role of intra-household gender differences in perceptions and bargaining power</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With B. Malde, H. Olorenshaw, Z. Wahhaj · <span class="pub-journal">Journal of Development Economics</span>, Vol. 162, 2023</div>
+            <div class="pub-links">Coverage: <a href="https://www.ideasforindia.in/topics/human-development/to-invest-in-sanitation-or-not-the-role-of-gender-differences-in-perceptions.html" target="_blank">Ideas for India</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1016/j.worlddev.2023.106197" target="_blank">Community Matters: Heterogeneous Impacts of a Sanitation Intervention</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With L. Abramovsky, M. Luehrman, F. Oteiza, J. P. Rud · <span class="pub-journal">World Development</span>, Vol. 165, 2023</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1016/j.jdeveco.2022.102933" target="_blank">When Nature Calls Back: Sustaining Behavioural Change in Rural Pakistan</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With A. Bancalari, Z. Durrani, M. Vaidyanathan, Z. White · <span class="pub-journal">Journal of Development Economics</span>, Vol. 158, 2022</div>
+            <div class="pub-links">Coverage: <a href="https://voxdev.org/topic/health-education/sustaining-behavioural-change-evidence-rural-pakistan" target="_blank">VoxDev</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://www.sciencedirect.com/science/article/pii/S0305750X18300433" target="_blank">Sanitation and Child Health in India</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With P. Rodríguez Lesmes · <span class="pub-journal">World Development</span>, Vol. 107, 2018</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="stim">
+          <div class="pub-dot stim"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://www.journals.uchicago.edu/doi/10.1086/735106" target="_blank">Complementarities in the production of child health</a>
+              <span class="pub-tag stim">Early Stimulation</span>
+            </div>
+            <div class="pub-meta">With L. Abramovsky, P. Jervis, B. Malde, A. Phimister · <span class="pub-journal">Journal of Human Capital</span>, 2024</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="stim">
+          <div class="pub-dot stim"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1542/peds.2020-002725" target="_blank">Group Sessions or Home Visits for Early Childhood Development in India: A Cluster RCT</a>
+              <span class="pub-tag stim">Early Stimulation</span>
+            </div>
+            <div class="pub-meta">With O. Attanasio, J. Behrman, B. Caeyers et al. · <span class="pub-journal">Paediatrics</span>, Vol. 146, 2020</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="stim">
+          <div class="pub-dot stim"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/31797385/" target="_blank">Effects of a home visiting intervention in the slums of Cuttack, Odisha: a cluster randomized trial</a>
+              <span class="pub-tag stim">Early Stimulation</span>
+            </div>
+            <div class="pub-meta">With A. Andrew, O. Attanasio, S. Grantham-McGregor, C. Meghir, M. Rubio Codina · <span class="pub-journal">Journal of Child Psychology and Psychiatry</span>, Vol. 61, 2020</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/38805882/" target="_blank">Religious proximity and misinformation: Experimental evidence from a mobile phone-based campaign in India</a>
+            </div>
+            <div class="pub-meta">With A. Armand, A. Bancalari, K. K. Kamershwara · <span class="pub-journal">Journal of Health Economics</span>, 2024</div>
+            <div class="pub-links">Coverage: <a href="https://www.ideasforindia.in/topics/human-development/covid-19-debunking-fake-news-among-slum-dwellers.html" target="_blank">Ideas for India</a> · <a href="https://www.theigc.org/blog/covid-19-and-the-willingness-to-vaccinate-evidence-from-india/" target="_blank">IGC</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1016/j.jdeveco.2023.103053" target="_blank">Labelled loans and human capital investments</a>
+            </div>
+            <div class="pub-meta">With B. Caeyers, S. Giunti, B. Malde, S. Smets · <span class="pub-journal">Journal of Development Economics</span>, Vol. 158, 2023</div>
+            <div class="pub-links">Coverage: <a href="https://www.ideasforindia.in/topics/human-development/labelled-loans-and-sanitation-investments.html" target="_blank">Ideas for India</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1038/s41591-021-01454-y" target="_blank">COVID-19 Vaccine Acceptance and Hesitancy in Low- and Middle-Income Countries</a>
+            </div>
+            <div class="pub-meta">With J. S. Solís Arce et al., A. M. Mobarak · <span class="pub-journal">Nature Medicine</span> 27, 2021</div>
+            <div class="pub-links">Coverage: <a href="https://ifs.org.uk/publications/14779" target="_blank">IFS Observation</a> · <a href="https://www.ideasforindia.in/topics/poverty-inequality/covid-19-willingness-to-vaccinate.html" target="_blank">Ideas for India</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://academic.oup.com/jeea/article-abstract/17/6/1797/5085985" target="_blank">Microcredit Contracts and Risk Diversification</a>
+            </div>
+            <div class="pub-meta">With O. Attanasio, R. De Haas · <span class="pub-journal">Journal of the European Economic Association</span>, Vol. 17, 2018</div>
+            <div class="pub-links">Coverage: <a href="https://voxdev.org/topic/finance/can-joint-liability-microcredit-help-share-entrepreneurial-risks-insights-mongolia" target="_blank">VoxDev</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="http://dx.doi.org/10.1257/app.20130489" target="_blank">The Impacts of Microcredit: Evidence from Bosnia and Herzegovina</a>
+            </div>
+            <div class="pub-meta">With R. De Haas, H. Harmgart and C. Meghir · <span class="pub-journal">American Economic Journal: Applied Economics</span>, 7(1), 2015</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="http://dx.doi.org/10.1257/app.20130272" target="_blank">The impacts of microfinance: Evidence from joint-liability lending in Mongolia</a>
+            </div>
+            <div class="pub-meta">With O. Attanasio, R. De Haas, E. Fitzsimons, H. Harmgart · <span class="pub-journal">American Economic Journal: Applied</span>, 7(1), 2015</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://voxdev.org/voxdevlit/sanitation-infrastructure" target="_blank">Sanitation Infrastructure</a> (edited volume)
+            </div>
+            <div class="pub-meta">With A. Foster and M. Lipscomb · <span class="pub-journal">VoxDev Lit</span>, 2023</div>
+          </div>
+        </li>
+
+      </ul>
+
+      <!-- WORKING PAPERS subsection -->      </ul>
+
+      <!-- WORKING PAPERS subsection -->
+      <h3 style="font-family:'Playfair Display',serif;font-weight:400;font-size:1.3rem;margin-top:3rem;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);">
+        Advanced Working Papers &amp; Under Review
+      </h3>
+      <ul class="pub-list">
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">At Scale Implementation and the Perils of Fragmentation <span class="wp-badge">Under Review — JPE Micro</span></div>
+            <div class="pub-meta">With M. Ghatak, S. Giunti, B. Malde</div>
+          </div>
+        </li>
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://ifs.org.uk/sites/default/files/2023-11/WP202337-Public-service-delivery-exclusion-and-externalities-theory-and-experiemental-evidence-from-India.pdf" target="_blank">Public Service Delivery, Exclusion, and Externalities</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With A. Armand, A. Bancalari, M. Ghatak · IFS Working Paper W23/37</div>
+          </div>
+        </li>
+        <li class="pub-item" data-cat="nutr">
+          <div class="pub-dot nutr"></div>
+          <div class="pub-content">
+            <div class="pub-title">Pregnancy, food purchases and nutritional quality <span class="pub-tag nutr">Nutrition</span></div>
+            <div class="pub-meta">With G. Conti, M. Luehrman, P. Spinola, S. von Hinke</div>
+          </div>
+        </li>
+        <li class="pub-item" data-cat="nutr">
+          <div class="pub-dot nutr"></div>
+          <div class="pub-content">
+            <div class="pub-title">Nutritional impacts of targeted food payments in early life <span class="pub-tag nutr">Nutrition</span></div>
+            <div class="pub-meta">With G. Conti, C. Farquharson, S. von Hinke, M. Luehrmann, A. McKendrick, L. Wang</div>
+          </div>
+        </li>
+        <li class="pub-item" data-cat="stim">
+          <div class="pub-dot stim"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://thrivechildevidence.org/wp-content/uploads/2025/11/Ghana_Report_Managing-Early-Learning_Northern-Ghana.pdf" target="_blank">Managing Early Learning: Local Bureaucratic Practices and Pre-school Quality in Northern Ghana</a>
+              <span class="pub-tag stim">Early Stimulation</span>
+            </div>
+            <div class="pub-meta">With S. Krutikova, I. Merediz-Solà, KB Tandoh, O. Veroux · Thrive Working Paper, 2025</div>
+          </div>
+        </li>
+        <li class="pub-item" data-cat="stim">
+          <div class="pub-dot stim"></div>
+          <div class="pub-content">
+            <div class="pub-title">Understanding Teacher Turnover: A Framework of Teacher Demotivation Over Time <span class="pub-tag stim">Early Stimulation</span></div>
+            <div class="pub-meta">With N. Colombé</div>
+          </div>
+        </li>
+      </ul>
     </section>
 
     
@@ -618,6 +893,23 @@
     </footer>
   </main>
 </div>
-
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const pubItems   = document.querySelectorAll('#pub-list .pub-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      pubItems.forEach(item => {
+        if (f === 'all' || item.dataset.cat === f) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
