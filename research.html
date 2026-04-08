@@ -89,6 +89,20 @@
     .sidebar nav a:hover,
     .sidebar nav a.active { color: var(--gold); }
 
+
+    .subnav { padding: 0.2rem 0 0.4rem 0.6rem; }
+    .subnav a {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      padding: 0.3rem 0;
+      border-bottom: none;
+      transition: color 0.2s;
+    }
+    .subnav a:hover { color: var(--accent); }
     .sidebar-contact {
       margin-top: 1.2rem;
       border-top: 1px solid var(--rule);
@@ -583,6 +597,11 @@
     <nav>
       <a href="index.html">About</a>
       <a href="research.html" class="active">Research</a>
+      <div class="subnav">
+        <a href="research.html#publications">— Publications</a>
+        <a href="research.html#working-papers">— Working Papers</a>
+        <a href="research.html#grants">— Grants</a>
+      </div>
       <a href="cv.html">CV</a>
     </nav>
     <div class="sidebar-contact">
@@ -622,7 +641,7 @@
       <p style="font-size:1rem; line-height:1.75; color:var(--ink-light); max-width:680px; margin-bottom:2.5rem;">
         My research focuses on how early-life environments—particularly sanitation, stimulation, and nutrition—shape child development and human capital formation. More broadly, I look at the constraints that limit effective service delivery and how policies and programmes can be designed, implemented, and sustained at scale. I work primarily in Sub-Saharan Africa and South Asia, using randomised controlled trials and quasi-experimental methods.
       </p>
-      <div class="research-areas">
+      <div class="research-areas" id="research-areas">
 
         <div class="area-card wash">
           <div class="area-tag">WASH &amp; Sanitation</div>
@@ -630,58 +649,13 @@
           <p>
             [Placeholder — feel free to send me a short paragraph describing your WASH work and I'll drop it in. For example: the countries you've worked in, the key questions you address, and any flagship projects.]
           </p>
-          <div class="area-grants">
-            <div class="area-grants-label">Selected Grants</div>
-            <ul class="area-grant-list">
-              <li><span class="grant-years">2017–2020</span> Community toilet use in slums — willingness to pay and the role of informational and supply side constraints · 3ie · US$550,000 · <strong>PI</strong></li>
-              <li><span class="grant-years">2013–2018</span> Sustainable Total Sanitation in Nigeria · WaterAid / BMGF · US$1,113,930 · <strong>PI</strong></li>
-              <li><span class="grant-years">2012–2018</span> Incentivizing Sanitation Uptake and Sustainable Usage through Microfinance · SIEF · US$601,508 · <strong>Co-I</strong></li>
-              <li><span class="grant-years">2019–2021</span> Family and social effects on adoption of preventative health measures · ESRC · £299,530 · <strong>PI</strong></li>
-            </ul>
           </div>
         </div>
-
-        <div class="area-card stim">
-          <div class="area-tag">Early Stimulation</div>
-          <h3>Early Childhood Stimulation</h3>
-          <p>
-            [Placeholder — a short paragraph on your early childhood development work: programmes evaluated, countries, key themes such as delivery at scale, teacher quality, etc.]
-          </p>
-          <div class="area-grants">
-            <div class="area-grants-label">Selected Grants</div>
-            <ul class="area-grant-list">
-              <li><span class="grant-years">2022–2026</span> Thrive — ECD interventions to scale · FCDO · £16,873,644 · <strong>International PI</strong> for Ghana</li>
-              <li><span class="grant-years">2021–2024</span> Evaluating the Lively Minds ECCE Programme in Ghana · USAID · US$1,500,000 · <strong>Co-I</strong></li>
-              <li><span class="grant-years">2021–2024</span> Improving development through play · MRC · £1,100,000 · <strong>Co-I</strong></li>
-              <li><span class="grant-years">2012–2018</span> Early Childhood Development for the Poor: Impacting at Scale · NIH · US$2,242,585 · <strong>Co-I</strong></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="area-card nutr">
-          <div class="area-tag">Nutrition</div>
-          <h3>Nutrition</h3>
-          <p>
-            [Placeholder — a short paragraph on your nutrition research: Healthy Start, food retail environments, pregnancy and early childhood nutrition, etc.]
-          </p>
-          <div class="area-grants">
-            <div class="area-grants-label">Selected Grants</div>
-            <ul class="area-grant-list">
-              <li><span class="grant-years">2023–2028</span> NIHR Policy Research Unit Healthy Weight · NIHR · £5,486,726 · <strong>Co-I</strong></li>
-              <li><span class="grant-years">2023–2026</span> ECON Study: placement regulations and the convenience store sector · NIHR PHR · £1,372,815 · <strong>Co-I</strong></li>
-              <li><span class="grant-years">2021–2024</span> Optimising uptake of the Healthy Start scheme · PRP · £844,785 · <strong>Co-I</strong></li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
     </section>
 
     <!-- PUBLICATIONS -->
-    <section id="publications">
-      <div class="section-label">Publications</div>
-      <h2 class="section-title">Selected Publications</h2>
-
+    <section id="publications" style="padding-bottom:0;">
+      <div class="section-label">Filter by area</div>
       <div class="pub-filter">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="wash">WASH</button>
@@ -690,6 +664,7 @@
         <button class="filter-btn" data-filter="other">Other</button>
       </div>
 
+      <h3 style="font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:1.1rem;color:var(--ink);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--rule);" id="publications-heading">Publications</h3>
       <ul class="pub-list" id="pub-list">
 
         <li class="pub-item" data-cat="wash">
@@ -772,8 +747,8 @@
           </div>
         </li>
 
-        <li class="pub-item" data-cat="stim">
-          <div class="pub-dot stim"></div>
+        <li class="pub-item" data-cat="wash stim nutr">
+          <div class="pub-dot wash"></div>
           <div class="pub-content">
             <div class="pub-title">
               <a href="https://www.journals.uchicago.edu/doi/10.1086/735106" target="_blank">Complementarities in the production of child health</a>
@@ -816,8 +791,8 @@
           </div>
         </li>
 
-        <li class="pub-item" data-cat="other">
-          <div class="pub-dot other"></div>
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
           <div class="pub-content">
             <div class="pub-title">
               <a href="https://doi.org/10.1016/j.jdeveco.2023.103053" target="_blank">Labelled loans and human capital investments</a>
@@ -884,12 +859,12 @@
       <!-- WORKING PAPERS subsection -->      </ul>
 
       <!-- WORKING PAPERS subsection -->
-      <h3 style="font-family:'Playfair Display',serif;font-weight:400;font-size:1.3rem;margin-top:3rem;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);">
-        Advanced Working Papers &amp; Under Review
+      <h3 style="font-family:'Source Sans 3',sans-serif;font-weight:400;font-size:1.3rem;margin-top:3rem;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);">
+        <span id="working-papers">Advanced Working Papers &amp; Under Review</span>
       </h3>
       <ul class="pub-list">
-        <li class="pub-item" data-cat="other">
-          <div class="pub-dot other"></div>
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
           <div class="pub-content">
             <div class="pub-title">At Scale Implementation and the Perils of Fragmentation <span class="wp-badge">Under Review — JPE Micro</span></div>
             <div class="pub-meta">With M. Ghatak, S. Giunti, B. Malde</div>
@@ -919,8 +894,8 @@
             <div class="pub-meta">With G. Conti, C. Farquharson, S. von Hinke, M. Luehrmann, A. McKendrick, L. Wang</div>
           </div>
         </li>
-        <li class="pub-item" data-cat="stim">
-          <div class="pub-dot stim"></div>
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
           <div class="pub-content">
             <div class="pub-title">
               <a href="https://thrivechildevidence.org/wp-content/uploads/2025/11/Ghana_Report_Managing-Early-Learning_Northern-Ghana.pdf" target="_blank">Managing Early Learning: Local Bureaucratic Practices and Pre-school Quality in Northern Ghana</a>
@@ -938,6 +913,122 @@
         </li>
       </ul>
     </section>
+    <!-- GRANTS -->
+    <section id="grants" style="padding: 0 4rem 3rem;">
+      <h3 style="font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:1.3rem;color:var(--ink);margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);">Selected Grants</h3>
+      <ul class="project-list" id="grant-list">
+
+        <li class="project-item grant-item" data-cat="stim" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot stim" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Thrive — Research into taking early childhood development interventions to scale</div>
+          <div class="project-meta">2022–2026 · FCDO · £16,873,644 · <strong>International PI</strong> for Ghana</div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="nutr" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot nutr" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">NIHR Policy Research Unit Healthy Weight</div>
+          <div class="project-meta">2023–2028 · NIHR · £5,486,726 · <strong>Co-I</strong></div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="nutr" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot nutr" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">ECON Study: Evaluating the impact of placement regulations on the convenience store sector</div>
+          <div class="project-meta">2023–2026 · NIHR PHR · £1,372,815 · <strong>Co-I</strong></div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="nutr" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot nutr" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Evaluation and co-creation to optimise uptake and benefits of the Healthy Start scheme</div>
+          <div class="project-meta">2021–2024 · PRP · £844,785 · <strong>Co-I</strong></div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="stim" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot stim" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Evaluating the Lively Minds ECCE Programme in Ghana</div>
+          <div class="project-meta">2021–2024 · USAID · US$1,500,000 · <strong>Co-I</strong> (PI: O. Attanasio, S. Krutikova)</div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="stim" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot stim" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Improving development through play — Evaluation of a comprehensive ECCE programme at scale in Ghana</div>
+          <div class="project-meta">2021–2024 · MRC · £1,100,000 · <strong>Co-I</strong> (PI: S. Krutikova)</div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="wash" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot wash" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">World Bank: Enhancing the Sustainability of Rural and Small-Town Water Services in Nigeria</div>
+          <div class="project-meta">2021 · World Bank · US$19,250 · <strong>Co-I</strong></div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="other" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot other" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Coping with COVID-19 measures in Informal Settlements</div>
+          <div class="project-meta">2020–2021 · IGC · £16,348 · <strong>PI</strong> (with A. Armand and A. Bancalari)</div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="other" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot other" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">COVID-19 Spread in Informal Settlements</div>
+          <div class="project-meta">2020–2021 · LSE · £10,062 · <strong>Co-I</strong></div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="wash" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot wash" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Family and social effects on adoption of preventative health measures</div>
+          <div class="project-meta">2019–2021 · ESRC · £299,530 · <strong>PI</strong></div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="wash" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot wash" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Does information provision foster or hinder the effectiveness of microcredit for human capital investments?</div>
+          <div class="project-meta">2019–2021 · ESRC-DFID DEGRP Follow-on Fund · £97,532 · <strong>Co-I</strong> (PI: O. Attanasio)</div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="stim" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot stim" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Improving children's life chances in high-risk, low-income settings: Designing a new generation longitudinal cohort study</div>
+          <div class="project-meta">2016–2018 · British Academy · £202,163 · Co-investigator</div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="wash" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot wash" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Community toilet use in slums — willingness to pay and the role of informational and supply side constraints</div>
+          <div class="project-meta">2017–2020 · 3ie · US$550,000 · <strong>PI</strong> (with A. Armand and O. Attanasio)</div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="wash" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot wash" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Sustainable Total Sanitation in Nigeria — implementation, learning, research, and influence on practice and policy</div>
+          <div class="project-meta">2013–2018 · WaterAid / BMGF · US$1,113,930 · <strong>PI</strong></div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="wash" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot wash" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Consultant on Monitoring, Verification and Evaluation for the DFID WASH Results Programme</div>
+          <div class="project-meta">2014–2018 · DFID / OPM</div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="wash" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot wash" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Incentivizing Sanitation Uptake and Sustainable Usage through Microfinance</div>
+          <div class="project-meta">2012–2018 · SIEF (World Bank) · US$601,508 · <strong>Co-I</strong></div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="stim" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot stim" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Early Childhood Development for the Poor: Impacting at Scale</div>
+          <div class="project-meta">2012–2018 · NIH · US$2,242,585 · <strong>Co-I</strong></div></div>
+        </li>
+
+        <li class="project-item grant-item" data-cat="stim" style="display:flex;gap:1.2rem;align-items:flex-start;">
+          <div class="pub-dot stim" style="margin-top:0.4rem;flex-shrink:0;"></div>
+          <div><div class="project-title">Early Childhood Development for the Poor — Evaluation of the Impacts (midline survey)</div>
+          <div class="project-meta">2014–2017 · SIEF · US$439,656 · <strong>Co-I</strong></div></div>
+        </li>
+
+      </ul>
+    </section>
+
 
     
     <footer class="footer">
@@ -949,13 +1040,17 @@
 <script>
   const filterBtns = document.querySelectorAll('.filter-btn');
   const pubItems   = document.querySelectorAll('#pub-list .pub-item');
+  const grantItems = document.querySelectorAll('#grant-list .grant-item');
+  const wpItems    = document.querySelectorAll('#wp-list .pub-item');
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const f = btn.dataset.filter;
-      pubItems.forEach(item => {
-        if (f === 'all' || item.dataset.cat === f) {
+      [...pubItems, ...grantItems, ...wpItems].forEach(item => {
+        const cats = (item.dataset.cat || '').split(' ');
+        if (f === 'all' || cats.includes(f)) {
           item.classList.remove('hidden');
         } else {
           item.classList.add('hidden');
