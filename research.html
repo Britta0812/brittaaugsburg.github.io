@@ -313,6 +313,30 @@
       margin-bottom: 0.6rem;
     }
     .area-card p { font-size: 0.88rem; color: var(--ink-light); line-height: 1.6; }
+    .area-grants { margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+    .area-grants-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.6rem;
+    }
+    .area-grant-list { list-style: none; }
+    .area-grant-list li {
+      font-size: 0.78rem;
+      color: var(--ink-light);
+      line-height: 1.5;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .area-grant-list li:last-child { border-bottom: none; }
+    .grant-years {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--ink-muted);
+      margin-right: 0.4rem;
+    }
 
     /* ─── PUBLICATIONS ─── */
     .pub-filter {
@@ -558,8 +582,7 @@
     <div class="sidebar-title">Associate Director<br><a href="https://www.ifs.org.uk" target="_blank" style="color:var(--accent);text-decoration:none;letter-spacing:0.12em;">Institute for Fiscal Studies</a></div>
     <nav>
       <a href="index.html">About</a>
-      <a href="research.html" class="active">Publications</a>
-      <a href="projects.html">Projects</a>
+      <a href="research.html" class="active">Research</a>
       <a href="cv.html">CV</a>
     </nav>
     <div class="sidebar-contact">
@@ -600,27 +623,57 @@
         My research focuses on how early-life environments—particularly sanitation, stimulation, and nutrition—shape child development and human capital formation. More broadly, I look at the constraints that limit effective service delivery and how policies and programmes can be designed, implemented, and sustained at scale. I work primarily in Sub-Saharan Africa and South Asia, using randomised controlled trials and quasi-experimental methods.
       </p>
       <div class="research-areas">
+
         <div class="area-card wash">
           <div class="area-tag">WASH &amp; Sanitation</div>
           <h3>Water, Sanitation &amp; Hygiene</h3>
           <p>
             [Placeholder — feel free to send me a short paragraph describing your WASH work and I'll drop it in. For example: the countries you've worked in, the key questions you address, and any flagship projects.]
           </p>
+          <div class="area-grants">
+            <div class="area-grants-label">Selected Grants</div>
+            <ul class="area-grant-list">
+              <li><span class="grant-years">2017–2020</span> Community toilet use in slums — willingness to pay and the role of informational and supply side constraints · 3ie · US$550,000 · <strong>PI</strong></li>
+              <li><span class="grant-years">2013–2018</span> Sustainable Total Sanitation in Nigeria · WaterAid / BMGF · US$1,113,930 · <strong>PI</strong></li>
+              <li><span class="grant-years">2012–2018</span> Incentivizing Sanitation Uptake and Sustainable Usage through Microfinance · SIEF · US$601,508 · <strong>Co-I</strong></li>
+              <li><span class="grant-years">2019–2021</span> Family and social effects on adoption of preventative health measures · ESRC · £299,530 · <strong>PI</strong></li>
+            </ul>
+          </div>
         </div>
+
         <div class="area-card stim">
           <div class="area-tag">Early Stimulation</div>
           <h3>Early Childhood Stimulation</h3>
           <p>
             [Placeholder — a short paragraph on your early childhood development work: programmes evaluated, countries, key themes such as delivery at scale, teacher quality, etc.]
           </p>
+          <div class="area-grants">
+            <div class="area-grants-label">Selected Grants</div>
+            <ul class="area-grant-list">
+              <li><span class="grant-years">2022–2026</span> Thrive — ECD interventions to scale · FCDO · £16,873,644 · <strong>International PI</strong> for Ghana</li>
+              <li><span class="grant-years">2021–2024</span> Evaluating the Lively Minds ECCE Programme in Ghana · USAID · US$1,500,000 · <strong>Co-I</strong></li>
+              <li><span class="grant-years">2021–2024</span> Improving development through play · MRC · £1,100,000 · <strong>Co-I</strong></li>
+              <li><span class="grant-years">2012–2018</span> Early Childhood Development for the Poor: Impacting at Scale · NIH · US$2,242,585 · <strong>Co-I</strong></li>
+            </ul>
+          </div>
         </div>
+
         <div class="area-card nutr">
           <div class="area-tag">Nutrition</div>
           <h3>Nutrition</h3>
           <p>
             [Placeholder — a short paragraph on your nutrition research: Healthy Start, food retail environments, pregnancy and early childhood nutrition, etc.]
           </p>
+          <div class="area-grants">
+            <div class="area-grants-label">Selected Grants</div>
+            <ul class="area-grant-list">
+              <li><span class="grant-years">2023–2028</span> NIHR Policy Research Unit Healthy Weight · NIHR · £5,486,726 · <strong>Co-I</strong></li>
+              <li><span class="grant-years">2023–2026</span> ECON Study: placement regulations and the convenience store sector · NIHR PHR · £1,372,815 · <strong>Co-I</strong></li>
+              <li><span class="grant-years">2021–2024</span> Optimising uptake of the Healthy Start scheme · PRP · £844,785 · <strong>Co-I</strong></li>
+            </ul>
+          </div>
         </div>
+
       </div>
     </section>
 
