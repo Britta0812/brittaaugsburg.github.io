@@ -6,23 +6,23 @@
   <title>Britta Augsburg | Development Economist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --ink:       #1a1814;
+      --ink:       #1e1b18;
       --ink-light: #4a453d;
-      --ink-muted: #8a837a;
-      --paper:     #faf8f4;
-      --paper-warm:#f3f0e8;
-      --rule:      #d8d2c4;
-      --accent:    #5a3e28;       /* deep archive brown */
-      --accent2:   #3a5a4a;       /* forest / WASH teal */
-      --accent3:   #7a4a28;       /* nutrition/warm terracotta */
-      --gold:      #b89450;
-      --wash:      #2c5f5a;
-      --stim:      #4a5c3a;
-      --nutr:      #7a4428;
+      --ink-muted: #9a938a;
+      --paper:     #ffffff;
+      --paper-warm:#f5f0e6;
+      --rule:      #e0d8cc;
+      --accent:    #7a5c3a;
+      --accent2:   #3a6a5a;
+      --accent3:   #8a5030;
+      --gold:      #c8a060;
+      --wash:      #2c6a60;
+      --stim:      #4a6a3a;
+      --nutr:      #8a4828;
       --col-max:   860px;
     }
 
@@ -46,22 +46,22 @@
       top: 0; left: 0;
       width: 210px;
       height: 100vh;
-      background: var(--ink);
-      color: var(--paper-warm);
+      background: var(--paper);
+      color: var(--ink);
       display: flex;
       flex-direction: column;
       padding: 2.8rem 1.6rem 2rem;
       z-index: 100;
-      border-right: 3px solid var(--gold);
+      border-right: 2px solid var(--rule);
     }
 
     .sidebar-name {
-      font-family: 'Source Serif 4', Georgia, serif;
+      font-family: 'Source Sans 3', system-ui, sans-serif;
       font-weight: 300;
       font-size: 1.25rem;
       line-height: 1.3;
       letter-spacing: 0.02em;
-      color: #f0ebe0;
+      color: var(--ink);
       margin-bottom: 0.3rem;
     }
     .sidebar-title {
@@ -80,20 +80,44 @@
       font-size: 0.62rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #c8c0b0;
+      color: var(--ink-light);
       text-decoration: none;
       padding: 0.55rem 0;
-      border-bottom: 1px solid #2e2b26;
+      border-bottom: 1px solid var(--rule);
       transition: color 0.2s;
     }
     .sidebar nav a:hover,
     .sidebar nav a.active { color: var(--gold); }
 
+    .sidebar-contact {
+      margin-top: 1.2rem;
+      border-top: 1px solid var(--rule);
+      padding-top: 1rem;
+    }
+    .sidebar-contact a {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      text-decoration: none;
+      padding: 0.3rem 0;
+      line-height: 1.4;
+      transition: color 0.15s;
+    }
+    .sidebar-contact a:hover { color: var(--accent); }
+    .sidebar-contact .sc-icon {
+      flex-shrink: 0;
+      width: 14px;
+      margin-top: 1px;
+      opacity: 0.6;
+    }
+    .sidebar-contact .sc-text { flex: 1; }
     .sidebar-affil {
       font-size: 0.7rem;
       line-height: 1.5;
-      color: #6e6860;
-      border-top: 1px solid #2e2b26;
+      color: var(--ink-muted);
+      border-top: 1px solid var(--rule);
       padding-top: 1rem;
     }
 
@@ -106,27 +130,11 @@
 
     /* ─── HERO ─── */
     .hero {
-      background: var(--ink);
-      color: var(--paper-warm);
-      padding: 5rem 4rem 4rem;
+      background: var(--paper);
+      color: var(--ink);
+      padding: 4rem 4rem 3rem;
       position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 320px; height: 320px;
-      border: 1px solid rgba(184,148,80,0.2);
-      border-radius: 50%;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; right: 60px;
-      width: 200px; height: 200px;
-      border: 1px solid rgba(184,148,80,0.1);
-      border-radius: 50%;
+      border-bottom: 2px solid var(--rule);
     }
 
     .hero-eyebrow {
@@ -134,29 +142,29 @@
       font-size: 0.62rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--ink-muted);
       margin-bottom: 1.2rem;
     }
     .hero h1 {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-weight: 300;
-      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      font-weight: 400;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
       line-height: 1.1;
       letter-spacing: -0.01em;
-      color: #f5f0e6;
+      color: var(--ink);
       margin-bottom: 0.5rem;
     }
     .hero-inst {
       font-family: 'DM Mono', monospace;
       font-size: 0.72rem;
       letter-spacing: 0.08em;
-      color: var(--gold);
+      color: var(--accent);
       margin-bottom: 2.2rem;
     }
     .hero-tagline {
-      font-size: 1.15rem;
+      font-size: 1.08rem;
       line-height: 1.65;
-      color: #c8c0b0;
+      color: var(--ink-light);
       max-width: 560px;
       font-style: italic;
       margin-bottom: 2.8rem;
@@ -177,9 +185,9 @@
       border-radius: 2px;
       border: 1px solid;
     }
-    .pillar-chip.wash  { color: #7ecfca; border-color: #7ecfca; }
-    .pillar-chip.stim  { color: #a8c890; border-color: #a8c890; }
-    .pillar-chip.nutr  { color: #e8a878; border-color: #e8a878; }
+    .pillar-chip.wash  { color: var(--wash); border-color: var(--wash); }
+    .pillar-chip.stim  { color: var(--stim); border-color: var(--stim); }
+    .pillar-chip.nutr  { color: var(--nutr); border-color: var(--nutr); }
 
 
     /* ─── HERO PHOTO LAYOUT ─── */
@@ -196,22 +204,22 @@
       height: 200px;
       object-fit: cover;
       object-position: center top;
-      border: 2px solid rgba(184,148,80,0.4);
+      border: 2px solid var(--rule);
       filter: grayscale(15%);
     }
     .hero-photo-placeholder {
       flex-shrink: 0;
       width: 160px;
       height: 200px;
-      background: rgba(255,255,255,0.06);
-      border: 2px dashed rgba(184,148,80,0.3);
+      background: #faf7f2;
+      border: 2px dashed var(--rule);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'DM Mono', monospace;
       font-size: 0.55rem;
       letter-spacing: 0.1em;
-      color: rgba(184,148,80,0.5);
+      color: var(--ink-muted);
       text-align: center;
       padding: 1rem;
     }
@@ -230,7 +238,7 @@
       margin-bottom: 0.6rem;
     }
     .section-title {
-      font-family: 'Source Serif 4', Georgia, serif;
+      font-family: 'Source Sans 3', system-ui, sans-serif;
       font-weight: 400;
       font-size: 2rem;
       line-height: 1.2;
@@ -298,7 +306,7 @@
     .area-card.nutr .area-tag  { color: var(--nutr); }
 
     .area-card h3 {
-      font-family: 'Source Serif 4', Georgia, serif;
+      font-family: 'Source Sans 3', system-ui, sans-serif;
       font-weight: 600;
       font-size: 1.18rem;
       color: var(--ink);
@@ -548,7 +556,7 @@
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="sidebar-name">Britta<br>Augsburg</div>
-    <div class="sidebar-title">Development Economist</div>
+    <div class="sidebar-title">Associate Director<br><a href="https://www.ifs.org.uk" target="_blank" style="color:var(--accent);text-decoration:none;letter-spacing:0.12em;">Institute for Fiscal Studies</a></div>
     <nav>
       <a href="#about">About</a>
       <a href="#research">Research</a>
@@ -557,9 +565,31 @@
       <a href="#cv">CV</a>
       <a href="#contact">Contact</a>
     </nav>
-    <div class="sidebar-affil">
-      Institute for Fiscal Studies<br>
-      London, UK
+    <div class="sidebar-contact">
+      <a href="/cdn-cgi/l/email-protection#fd9f8f9489899ca29cbd949b8ed3928f9ad38896">
+        <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        <span class="sc-text"><span class="__cf_email__" data-cfemail="9efcecf7eaeaffc1ffdef7f8edb0f1ecf9b0ebf5">[email&#160;protected]</span></span>
+      </a>
+      <a href="http://www.ifs.org.uk/people/profile/417" target="_blank">
+        <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span class="sc-text">IFS Profile</span>
+      </a>
+      <a href="https://scholar.google.com/scholar?q=Britta+Augsburg" target="_blank">
+        <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <span class="sc-text">Google Scholar</span>
+      </a>
+      <a href="https://orcid.org/0000-0002-8864-7751" target="_blank">
+        <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12h6"/><path d="M9 8v8"/></svg>
+        <span class="sc-text">ORCID</span>
+      </a>
+      <a href="https://www.linkedin.com/in/britta-augsburg" target="_blank">
+        <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7"/><path d="M7 7v.01"/><path d="M11 10v7"/><path d="M11 13a3 3 0 0 1 6 0v4"/></svg>
+        <span class="sc-text">LinkedIn</span>
+      </a>
+      <a href="https://maps.google.com/?q=Institute+for+Fiscal+Studies,+2+Marylebone+Road,+London" target="_blank">
+        <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <span class="sc-text">IFS, 2 Marylebone Road, London NW1 4DF</span>
+      </a>
     </div>
   </aside>
 
@@ -591,7 +621,7 @@
     <!-- ABOUT -->
     <section id="about">
       <div class="section-label">01 — About</div>
-      <h2 class="section-title">Biography</h2>
+      <h2 class="section-title">About</h2>
       <div class="about-grid">
         <div class="about-bio">
           <p>
@@ -608,22 +638,20 @@
           <dt>Position</dt>
           <dd>Associate Director, Institute for Fiscal Studies</dd>
           <dt>Email</dt>
-          <dd><a href="mailto:britta_a@ifs.org.uk">britta_a@ifs.org.uk</a></dd>
+          <dd><a href="/cdn-cgi/l/email-protection#117363786565704e70517877623f7e63763f647a"><span class="__cf_email__" data-cfemail="cfadbda6bbbbae90ae8fa6a9bce1a0bda8e1baa4">[email&#160;protected]</span></a></dd>
           <dt>IFS Profile</dt>
           <dd><a href="http://www.ifs.org.uk/people/profile/417" target="_blank">ifs.org.uk/people/profile/417</a></dd>
           <dt>Address</dt>
           <dd>2 Marylebone Road<br>London NW1 4DF, UK</dd>
           <dt>Phone</dt>
           <dd>+44 20 7291 4800</dd>
-          <dt>Associate Editor</dt>
-          <dd>Oxford Development Studies</dd>
         </dl>
       </div>
     </section>
 
     <!-- RESEARCH -->
     <section id="research">
-      <div class="section-label">02 — Research</div>
+      <div class="section-label">01 — Research</div>
       <h2 class="section-title">Research Areas</h2>
       <p class="research-intro">
         My work is unified by a central question: what determines whether children reach their full potential? I study three pillars of early-life environments, using randomised controlled trials and quasi-experimental methods across low- and middle-income countries.
@@ -656,7 +684,7 @@
 
     <!-- PUBLICATIONS -->
     <section id="publications">
-      <div class="section-label">03 — Publications</div>
+      <div class="section-label">02 — Publications</div>
       <h2 class="section-title">Selected Publications</h2>
 
       <div class="pub-filter">
@@ -861,7 +889,7 @@
       <!-- WORKING PAPERS subsection -->      </ul>
 
       <!-- WORKING PAPERS subsection -->
-      <h3 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.3rem;margin-top:3rem;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);">
+      <h3 style="font-family:'Playfair Display',serif;font-weight:400;font-size:1.3rem;margin-top:3rem;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);">
         Advanced Working Papers &amp; Under Review
       </h3>
       <ul class="pub-list">
@@ -918,7 +946,7 @@
 
     <!-- PROJECTS -->
     <section id="projects">
-      <div class="section-label">04 — Projects</div>
+      <div class="section-label">03 — Projects</div>
       <h2 class="section-title">Selected Research Grants &amp; Projects</h2>
 
       <ul class="project-list">
@@ -1004,7 +1032,7 @@
 
     <!-- CV -->
     <section id="cv">
-      <div class="section-label">05 — Curriculum Vitae</div>
+      <div class="section-label">04 — Curriculum Vitae</div>
       <h2 class="section-title">CV</h2>
 
       <a class="cv-download" href="CV_-_Britta_Augsburg_-_Jan_2026.docx" download>
@@ -1055,10 +1083,6 @@
         </div>
         <div class="cv-row">
           <div class="cv-year"></div>
-          <div class="cv-desc"><em>Associate Editor:</em> Oxford Development Studies</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-year"></div>
           <div class="cv-desc"><em>Advisory roles:</em> U.S. GAO, GiveWell, DHSC, Ghana Ministry of Education</div>
         </div>
       </div>
@@ -1074,13 +1098,13 @@
 
     <!-- CONTACT -->
     <section id="contact">
-      <div class="section-label">06 — Contact</div>
+      <div class="section-label">05 — Contact</div>
       <h2 class="section-title">Contact &amp; Affiliations</h2>
 
       <div class="contact-grid">
         <dl class="contact-block">
           <dt>Email</dt>
-          <dd><a href="mailto:britta_a@ifs.org.uk">britta_a@ifs.org.uk</a></dd>
+          <dd><a href="/cdn-cgi/l/email-protection#8defffe4f9f9ecd2eccde4ebfea3e2ffeaa3f8e6"><span class="__cf_email__" data-cfemail="a6c4d4cfd2d2c7f9c7e6cfc0d588c9d4c188d3cd">[email&#160;protected]</span></a></dd>
           <dt>Address</dt>
           <dd>Institute for Fiscal Studies<br>2 Marylebone Road<br>London NW1 4DF, UK</dd>
           <dt>Telephone</dt>
@@ -1111,7 +1135,7 @@
   </main><!-- /main -->
 </div><!-- /site-wrapper -->
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ─── Filter buttons
   const filterBtns = document.querySelectorAll('.filter-btn');
   const pubItems   = document.querySelectorAll('#pub-list .pub-item');
@@ -1125,28 +1149,4 @@
         if (f === 'all' || item.dataset.cat === f) {
           item.classList.remove('hidden');
         } else {
-          item.classList.add('hidden');
-        }
-      });
-    });
-  });
-
-  // ─── Active nav link on scroll
-  const sections = document.querySelectorAll('section[id], header[id]');
-  const navLinks  = document.querySelectorAll('.sidebar nav a');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(a => {
-          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
-        });
-      }
-    });
-  }, { rootMargin: '-30% 0px -60% 0px' });
-
-  sections.forEach(s => observer.observe(s));
-</script>
-
-</body>
-</html>
+          item.classLis
