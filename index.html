@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Britta Augsburg | Development Economist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --ink:       #1a1814;
+      --ink-light: #4a453d;
+      --ink-muted: #8a837a;
+      --paper:     #faf8f4;
+      --paper-warm:#f3f0e8;
+      --rule:      #d8d2c4;
+      --accent:    #5a3e28;       /* deep archive brown */
+      --accent2:   #3a5a4a;       /* forest / WASH teal */
+      --accent3:   #7a4a28;       /* nutrition/warm terracotta */
+      --gold:      #b89450;
+      --wash:      #2c5f5a;
+      --stim:      #4a5c3a;
+      --nutr:      #7a4428;
+      --col-max:   860px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 17px; }
+
+    body {
+      font-family: 'Source Sans 3', system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.72;
+    }
+
+    /* ─── LAYOUT ─── */
+    .site-wrapper { display: flex; min-height: 100vh; }
+
+    /* ─── SIDEBAR NAV ─── */
+    .sidebar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 210px;
+      height: 100vh;
+      background: var(--ink);
+      color: var(--paper-warm);
+      display: flex;
+      flex-direction: column;
+      padding: 2.8rem 1.6rem 2rem;
+      z-index: 100;
+      border-right: 3px solid var(--gold);
+    }
+
+    .sidebar-name {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      font-size: 1.25rem;
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+      color: #f0ebe0;
+      margin-bottom: 0.3rem;
+    }
+    .sidebar-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.4rem;
+    }
+
+    .sidebar nav { flex: 1; }
+    .sidebar nav a {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #c8c0b0;
+      text-decoration: none;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid #2e2b26;
+      transition: color 0.2s;
+    }
+    .sidebar nav a:hover,
+    .sidebar nav a.active { color: var(--gold); }
+
+    .sidebar-affil {
+      font-size: 0.7rem;
+      line-height: 1.5;
+      color: #6e6860;
+      border-top: 1px solid #2e2b26;
+      padding-top: 1rem;
+    }
+
+    /* ─── MAIN ─── */
+    .main {
+      margin-left: 210px;
+      flex: 1;
+      max-width: calc(100% - 210px);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: var(--ink);
+      color: var(--paper-warm);
+      padding: 5rem 4rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      border: 1px solid rgba(184,148,80,0.2);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: 60px;
+      width: 200px; height: 200px;
+      border: 1px solid rgba(184,148,80,0.1);
+      border-radius: 50%;
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 300;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: #f5f0e6;
+      margin-bottom: 0.5rem;
+    }
+    .hero-inst {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 2.2rem;
+    }
+    .hero-tagline {
+      font-size: 1.15rem;
+      line-height: 1.65;
+      color: #c8c0b0;
+      max-width: 560px;
+      font-style: italic;
+      margin-bottom: 2.8rem;
+    }
+
+    /* Research pillars chips */
+    .pillars {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+    .pillar-chip {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border-radius: 2px;
+      border: 1px solid;
+    }
+    .pillar-chip.wash  { color: #7ecfca; border-color: #7ecfca; }
+    .pillar-chip.stim  { color: #a8c890; border-color: #a8c890; }
+    .pillar-chip.nutr  { color: #e8a878; border-color: #e8a878; }
+
+
+    /* ─── HERO PHOTO LAYOUT ─── */
+    .hero-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-photo {
+      flex-shrink: 0;
+      width: 160px;
+      height: 200px;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid rgba(184,148,80,0.4);
+      filter: grayscale(15%);
+    }
+    .hero-photo-placeholder {
+      flex-shrink: 0;
+      width: 160px;
+      height: 200px;
+      background: rgba(255,255,255,0.06);
+      border: 2px dashed rgba(184,148,80,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: rgba(184,148,80,0.5);
+      text-align: center;
+      padding: 1rem;
+    }
+    .hero-text { flex: 1; }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 4rem 4rem; border-bottom: 1px solid var(--rule); }
+    section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 400;
+      font-size: 2rem;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--rule);
+    }
+
+    /* ─── ABOUT ─── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .about-bio p { margin-bottom: 1rem; color: var(--ink-light); font-size: 1rem; }
+    .about-info dt {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-top: 1.1rem;
+    }
+    .about-info dd { color: var(--ink-light); font-size: 0.92rem; }
+    .about-info a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--rule); }
+    .about-info a:hover { border-color: var(--accent); }
+
+    /* ─── RESEARCH AREAS ─── */
+    .research-intro { color: var(--ink-light); margin-bottom: 2rem; max-width: 640px; font-size: 1rem; }
+
+    .research-areas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .area-card {
+      border: 1px solid var(--rule);
+      padding: 1.6rem 1.4rem;
+      position: relative;
+      background: var(--paper);
+      transition: box-shadow 0.2s;
+    }
+    .area-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .area-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+    }
+    .area-card.wash::before  { background: var(--wash); }
+    .area-card.stim::before  { background: var(--stim); }
+    .area-card.nutr::before  { background: var(--nutr); }
+
+    .area-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .area-card.wash .area-tag  { color: var(--wash); }
+    .area-card.stim .area-tag  { color: var(--stim); }
+    .area-card.nutr .area-tag  { color: var(--nutr); }
+
+    .area-card h3 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 600;
+      font-size: 1.18rem;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+    .area-card p { font-size: 0.88rem; color: var(--ink-light); line-height: 1.6; }
+
+    /* ─── PUBLICATIONS ─── */
+    .pub-filter {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .filter-btn {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.8rem;
+      border: 1px solid var(--rule);
+      background: none;
+      cursor: pointer;
+      color: var(--ink-muted);
+      border-radius: 2px;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--ink);
+      color: var(--paper-warm);
+      border-color: var(--ink);
+    }
+
+    .pub-list { list-style: none; }
+    .pub-item {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+    .pub-item:last-child { border-bottom: none; }
+
+    .pub-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      margin-top: 0.55rem;
+      flex-shrink: 0;
+    }
+    .pub-dot.wash  { background: var(--wash); }
+    .pub-dot.stim  { background: var(--stim); }
+    .pub-dot.nutr  { background: var(--nutr); }
+    .pub-dot.other { background: var(--ink-muted); }
+
+    .pub-content {}
+    .pub-title {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.45;
+      margin-bottom: 0.25rem;
+    }
+    .pub-title a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted var(--rule);
+      transition: border-color 0.15s;
+    }
+    .pub-title a:hover { border-color: var(--accent); color: var(--accent); }
+    .pub-meta {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      line-height: 1.5;
+    }
+    .pub-journal { font-style: normal; }
+    .pub-tag {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.45rem;
+      border-radius: 2px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+    .pub-tag.wash  { background: rgba(44,95,90,0.1);  color: var(--wash); }
+    .pub-tag.stim  { background: rgba(74,92,58,0.1);  color: var(--stim); }
+    .pub-tag.nutr  { background: rgba(122,68,40,0.1); color: var(--nutr); }
+
+    /* ─── PROJECTS / GRANTS ─── */
+    .project-list { list-style: none; }
+    .project-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1.2rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .project-item:last-child { border-bottom: none; }
+    .project-years {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--ink-muted);
+      padding-top: 0.2rem;
+      line-height: 1.4;
+    }
+    .project-title { font-style: italic; font-size: 0.96rem; color: var(--ink); margin-bottom: 0.15rem; }
+    .project-meta { font-size: 0.82rem; color: var(--ink-muted); }
+
+    /* ─── CV ─── */
+    .cv-section { margin-bottom: 2.4rem; }
+    .cv-section h3 {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .cv-row {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1rem;
+      padding: 0.5rem 0;
+    }
+    .cv-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--ink-muted);
+      padding-top: 0.15rem;
+    }
+    .cv-desc { font-size: 0.92rem; color: var(--ink-light); }
+    .cv-desc em { color: var(--ink); font-style: normal; font-weight: 500; }
+
+    .cv-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      padding: 0.6rem 1.1rem;
+      border-radius: 2px;
+      transition: all 0.2s;
+      margin-bottom: 2.5rem;
+    }
+    .cv-download:hover { background: var(--accent); color: var(--paper); }
+
+    /* ─── CONTACT ─── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .contact-block dt {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-top: 1.2rem;
+    }
+    .contact-block dd { font-size: 0.92rem; color: var(--ink-light); margin-top: 0.2rem; }
+    .contact-block a { color: var(--accent); text-decoration: none; }
+    .contact-block a:hover { text-decoration: underline; }
+
+    .affiliations-list { list-style: none; }
+    .affiliations-list li {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--rule);
+      line-height: 1.5;
+    }
+    .affiliations-list li:last-child { border-bottom: none; }
+
+
+    .pub-links {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-top: 0.2rem;
+    }
+    .pub-links a {
+      color: var(--accent2);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--accent2);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+    }
+    .pub-links a:hover { border-bottom-style: solid; }
+
+    /* ─── WORKING PAPERS ─── */
+    .wp-badge {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(90,62,40,0.1);
+      color: var(--accent);
+      padding: 0.15rem 0.45rem;
+      border-radius: 2px;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      padding: 2rem 4rem;
+      background: var(--paper-warm);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ─── UTILITIES ─── */
+    .hidden { display: none !important; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .sidebar { display: none; }
+      .main { margin-left: 0; max-width: 100%; }
+      .hero { padding: 3rem 2rem; }
+      section { padding: 3rem 2rem; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .research-areas { grid-template-columns: 1fr; }
+      .footer { padding: 1.5rem 2rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-name">Britta<br>Augsburg</div>
+    <div class="sidebar-title">Development Economist</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="sidebar-affil">
+      Institute for Fiscal Studies<br>
+      London, UK
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- HERO -->
+    <header class="hero" id="top">
+      <div class="hero-inner">
+        <!-- Replace profile.jpg with your photo file, or remove this block if no photo yet -->
+        <img src="profile.jpg" alt="Britta Augsburg" class="hero-photo"
+             onerror="this.outerHTML='<div class=\'hero-photo-placeholder\'>Add profile.jpg to show photo here</div>'" />
+        <div class="hero-text">
+          <div class="hero-eyebrow">Associate Director · IFS · PhD Maastricht</div>
+          <h1>Britta Augsburg</h1>
+          <div class="hero-inst">Institute for Fiscal Studies &mdash; London</div>
+          <p class="hero-tagline">
+            How do early-life environments and public service delivery shape human capital formation?
+          </p>
+          <div class="pillars">
+            <span class="pillar-chip wash">WASH &amp; Sanitation</span>
+            <span class="pillar-chip stim">Early Stimulation</span>
+            <span class="pillar-chip nutr">Nutrition</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-label">01 — About</div>
+      <h2 class="section-title">Biography</h2>
+      <div class="about-grid">
+        <div class="about-bio">
+          <p>
+            I am an Associate Director at the Institute for Fiscal Studies (IFS) in London, where I have worked since 2008. My research is in development economics, with a particular focus on understanding how early-life environments and public service delivery shape human capital formation across the life course.
+          </p>
+          <p>
+            Within this overarching theme, my work spans three interconnected areas: water, sanitation and hygiene (WASH); early childhood stimulation; and nutrition. I conduct field experiments and impact evaluations, primarily in Sub-Saharan Africa and South Asia, and am committed to producing policy-relevant evidence.
+          </p>
+          <p>
+            I hold a PhD in Social Protection Policy from the University of Maastricht (2009) and am Associate Staff at University College London's Department of Economics.
+          </p>
+        </div>
+        <dl class="about-info">
+          <dt>Position</dt>
+          <dd>Associate Director, Institute for Fiscal Studies</dd>
+          <dt>Email</dt>
+          <dd><a href="mailto:britta_a@ifs.org.uk">britta_a@ifs.org.uk</a></dd>
+          <dt>IFS Profile</dt>
+          <dd><a href="http://www.ifs.org.uk/people/profile/417" target="_blank">ifs.org.uk/people/profile/417</a></dd>
+          <dt>Address</dt>
+          <dd>2 Marylebone Road<br>London NW1 4DF, UK</dd>
+          <dt>Phone</dt>
+          <dd>+44 20 7291 4800</dd>
+          <dt>Associate Editor</dt>
+          <dd>Oxford Development Studies</dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research">
+      <div class="section-label">02 — Research</div>
+      <h2 class="section-title">Research Areas</h2>
+      <p class="research-intro">
+        My work is unified by a central question: what determines whether children reach their full potential? I study three pillars of early-life environments, using randomised controlled trials and quasi-experimental methods across low- and middle-income countries.
+      </p>
+
+      <div class="research-areas">
+        <div class="area-card wash">
+          <div class="area-tag">Pillar I</div>
+          <h3>WASH &amp; Sanitation</h3>
+          <p>
+            Designing, evaluating and learning from sanitation interventions across Nigeria, India, Pakistan and beyond. I examine adoption barriers, gender dynamics, market design, and long-run health and social outcomes — including links to child mortality, marriage markets, and community externalities.
+          </p>
+        </div>
+        <div class="area-card stim">
+          <div class="area-tag">Pillar II</div>
+          <h3>Early Childhood Stimulation</h3>
+          <p>
+            Evaluating large-scale early childhood development programmes in Ghana and India, asking how delivery modality, teacher quality and local bureaucratic practice shape child cognitive and socio-emotional outcomes. Current work under the <em>Thrive</em> programme includes Ghana's Lively Minds ECCE intervention.
+          </p>
+        </div>
+        <div class="area-card nutr">
+          <div class="area-tag">Pillar III</div>
+          <h3>Nutrition</h3>
+          <p>
+            Studying how targeted food payments (e.g. Healthy Start) and food retail environments affect nutritional quality across the lifecycle — from pregnancy through early childhood. Joint work with the NIHR Healthy Weight Policy Research Unit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <div class="section-label">03 — Publications</div>
+      <h2 class="section-title">Selected Publications</h2>
+
+      <div class="pub-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="wash">WASH</button>
+        <button class="filter-btn" data-filter="stim">Early Stimulation</button>
+        <button class="filter-btn" data-filter="nutr">Nutrition</button>
+        <button class="filter-btn" data-filter="other">Other</button>
+      </div>
+
+      <ul class="pub-list" id="pub-list">
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://www.sciencedirect.com/science/article/pii/S0304387824000658" target="_blank">Evidence on designing sanitation interventions</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With A. Foster, T. Johnson, M. Lipscomb · <span class="pub-journal">Journal of Development Economics</span>, Vol. 171, 2024</div>
+            <div class="pub-links">Coverage: <a href="https://voxdev.org/topic/health/policy-lessons-new-advances-sanitation-economics" target="_blank">VoxDev</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              Sanitation Marketing in Nigeria
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With L. Abramovsky et al. · <span class="pub-journal">World Development</span>, forthcoming</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1016/j.jdeveco.2023.103092" target="_blank">Sanitation and marriage markets in India: Evidence from the Total Sanitation Campaign</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With P. Rodriguez Lesmes, S. Gautam, J. P. Baquero · <span class="pub-journal">Journal of Development Economics</span>, Vol. 163, 2023</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1016/j.jdeveco.2023.103074" target="_blank">To invest or not to invest in sanitation: The role of intra-household gender differences in perceptions and bargaining power</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With B. Malde, H. Olorenshaw, Z. Wahhaj · <span class="pub-journal">Journal of Development Economics</span>, Vol. 162, 2023</div>
+            <div class="pub-links">Coverage: <a href="https://www.ideasforindia.in/topics/human-development/to-invest-in-sanitation-or-not-the-role-of-gender-differences-in-perceptions.html" target="_blank">Ideas for India</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1016/j.worlddev.2023.106197" target="_blank">Community Matters: Heterogeneous Impacts of a Sanitation Intervention</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With L. Abramovsky, M. Luehrman, F. Oteiza, J. P. Rud · <span class="pub-journal">World Development</span>, Vol. 165, 2023</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1016/j.jdeveco.2022.102933" target="_blank">When Nature Calls Back: Sustaining Behavioural Change in Rural Pakistan</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With A. Bancalari, Z. Durrani, M. Vaidyanathan, Z. White · <span class="pub-journal">Journal of Development Economics</span>, Vol. 158, 2022</div>
+            <div class="pub-links">Coverage: <a href="https://voxdev.org/topic/health-education/sustaining-behavioural-change-evidence-rural-pakistan" target="_blank">VoxDev</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://www.sciencedirect.com/science/article/pii/S0305750X18300433" target="_blank">Sanitation and Child Health in India</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With P. Rodríguez Lesmes · <span class="pub-journal">World Development</span>, Vol. 107, 2018</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="stim">
+          <div class="pub-dot stim"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://www.journals.uchicago.edu/doi/10.1086/735106" target="_blank">Complementarities in the production of child health</a>
+              <span class="pub-tag stim">Early Stimulation</span>
+            </div>
+            <div class="pub-meta">With L. Abramovsky, P. Jervis, B. Malde, A. Phimister · <span class="pub-journal">Journal of Human Capital</span>, 2024</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="stim">
+          <div class="pub-dot stim"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1542/peds.2020-002725" target="_blank">Group Sessions or Home Visits for Early Childhood Development in India: A Cluster RCT</a>
+              <span class="pub-tag stim">Early Stimulation</span>
+            </div>
+            <div class="pub-meta">With O. Attanasio, J. Behrman, B. Caeyers et al. · <span class="pub-journal">Paediatrics</span>, Vol. 146, 2020</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="stim">
+          <div class="pub-dot stim"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/31797385/" target="_blank">Effects of a home visiting intervention in the slums of Cuttack, Odisha: a cluster randomized trial</a>
+              <span class="pub-tag stim">Early Stimulation</span>
+            </div>
+            <div class="pub-meta">With A. Andrew, O. Attanasio, S. Grantham-McGregor, C. Meghir, M. Rubio Codina · <span class="pub-journal">Journal of Child Psychology and Psychiatry</span>, Vol. 61, 2020</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://pubmed.ncbi.nlm.nih.gov/38805882/" target="_blank">Religious proximity and misinformation: Experimental evidence from a mobile phone-based campaign in India</a>
+            </div>
+            <div class="pub-meta">With A. Armand, A. Bancalari, K. K. Kamershwara · <span class="pub-journal">Journal of Health Economics</span>, 2024</div>
+            <div class="pub-links">Coverage: <a href="https://www.ideasforindia.in/topics/human-development/covid-19-debunking-fake-news-among-slum-dwellers.html" target="_blank">Ideas for India</a> · <a href="https://www.theigc.org/blog/covid-19-and-the-willingness-to-vaccinate-evidence-from-india/" target="_blank">IGC</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1016/j.jdeveco.2023.103053" target="_blank">Labelled loans and human capital investments</a>
+            </div>
+            <div class="pub-meta">With B. Caeyers, S. Giunti, B. Malde, S. Smets · <span class="pub-journal">Journal of Development Economics</span>, Vol. 158, 2023</div>
+            <div class="pub-links">Coverage: <a href="https://www.ideasforindia.in/topics/human-development/labelled-loans-and-sanitation-investments.html" target="_blank">Ideas for India</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://doi.org/10.1038/s41591-021-01454-y" target="_blank">COVID-19 Vaccine Acceptance and Hesitancy in Low- and Middle-Income Countries</a>
+            </div>
+            <div class="pub-meta">With J. S. Solís Arce et al., A. M. Mobarak · <span class="pub-journal">Nature Medicine</span> 27, 2021</div>
+            <div class="pub-links">Coverage: <a href="https://ifs.org.uk/publications/14779" target="_blank">IFS Observation</a> · <a href="https://www.ideasforindia.in/topics/poverty-inequality/covid-19-willingness-to-vaccinate.html" target="_blank">Ideas for India</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://academic.oup.com/jeea/article-abstract/17/6/1797/5085985" target="_blank">Microcredit Contracts and Risk Diversification</a>
+            </div>
+            <div class="pub-meta">With O. Attanasio, R. De Haas · <span class="pub-journal">Journal of the European Economic Association</span>, Vol. 17, 2018</div>
+            <div class="pub-links">Coverage: <a href="https://voxdev.org/topic/finance/can-joint-liability-microcredit-help-share-entrepreneurial-risks-insights-mongolia" target="_blank">VoxDev</a></div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="http://dx.doi.org/10.1257/app.20130489" target="_blank">The Impacts of Microcredit: Evidence from Bosnia and Herzegovina</a>
+            </div>
+            <div class="pub-meta">With R. De Haas, H. Harmgart and C. Meghir · <span class="pub-journal">American Economic Journal: Applied Economics</span>, 7(1), 2015</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="http://dx.doi.org/10.1257/app.20130272" target="_blank">The impacts of microfinance: Evidence from joint-liability lending in Mongolia</a>
+            </div>
+            <div class="pub-meta">With O. Attanasio, R. De Haas, E. Fitzsimons, H. Harmgart · <span class="pub-journal">American Economic Journal: Applied</span>, 7(1), 2015</div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://voxdev.org/voxdevlit/sanitation-infrastructure" target="_blank">Sanitation Infrastructure</a> (edited volume)
+            </div>
+            <div class="pub-meta">With A. Foster and M. Lipscomb · <span class="pub-journal">VoxDev Lit</span>, 2023</div>
+          </div>
+        </li>
+
+      </ul>
+
+      <!-- WORKING PAPERS subsection -->      </ul>
+
+      <!-- WORKING PAPERS subsection -->
+      <h3 style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.3rem;margin-top:3rem;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);">
+        Advanced Working Papers &amp; Under Review
+      </h3>
+      <ul class="pub-list">
+        <li class="pub-item" data-cat="other">
+          <div class="pub-dot other"></div>
+          <div class="pub-content">
+            <div class="pub-title">At Scale Implementation and the Perils of Fragmentation <span class="wp-badge">Under Review — JPE Micro</span></div>
+            <div class="pub-meta">With M. Ghatak, S. Giunti, B. Malde</div>
+          </div>
+        </li>
+        <li class="pub-item" data-cat="wash">
+          <div class="pub-dot wash"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://ifs.org.uk/sites/default/files/2023-11/WP202337-Public-service-delivery-exclusion-and-externalities-theory-and-experiemental-evidence-from-India.pdf" target="_blank">Public Service Delivery, Exclusion, and Externalities</a>
+              <span class="pub-tag wash">WASH</span>
+            </div>
+            <div class="pub-meta">With A. Armand, A. Bancalari, M. Ghatak · IFS Working Paper W23/37</div>
+          </div>
+        </li>
+        <li class="pub-item" data-cat="nutr">
+          <div class="pub-dot nutr"></div>
+          <div class="pub-content">
+            <div class="pub-title">Pregnancy, food purchases and nutritional quality <span class="pub-tag nutr">Nutrition</span></div>
+            <div class="pub-meta">With G. Conti, M. Luehrman, P. Spinola, S. von Hinke</div>
+          </div>
+        </li>
+        <li class="pub-item" data-cat="nutr">
+          <div class="pub-dot nutr"></div>
+          <div class="pub-content">
+            <div class="pub-title">Nutritional impacts of targeted food payments in early life <span class="pub-tag nutr">Nutrition</span></div>
+            <div class="pub-meta">With G. Conti, C. Farquharson, S. von Hinke, M. Luehrmann, A. McKendrick, L. Wang</div>
+          </div>
+        </li>
+        <li class="pub-item" data-cat="stim">
+          <div class="pub-dot stim"></div>
+          <div class="pub-content">
+            <div class="pub-title">
+              <a href="https://thrivechildevidence.org/wp-content/uploads/2025/11/Ghana_Report_Managing-Early-Learning_Northern-Ghana.pdf" target="_blank">Managing Early Learning: Local Bureaucratic Practices and Pre-school Quality in Northern Ghana</a>
+              <span class="pub-tag stim">Early Stimulation</span>
+            </div>
+            <div class="pub-meta">With S. Krutikova, I. Merediz-Solà, KB Tandoh, O. Veroux · Thrive Working Paper, 2025</div>
+          </div>
+        </li>
+        <li class="pub-item" data-cat="stim">
+          <div class="pub-dot stim"></div>
+          <div class="pub-content">
+            <div class="pub-title">Understanding Teacher Turnover: A Framework of Teacher Demotivation Over Time <span class="pub-tag stim">Early Stimulation</span></div>
+            <div class="pub-meta">With N. Colombé</div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-label">04 — Projects</div>
+      <h2 class="section-title">Selected Research Grants &amp; Projects</h2>
+
+      <ul class="project-list">
+        <li class="project-item">
+          <div class="project-years">2022–2026</div>
+          <div>
+            <div class="project-title">Thrive — Research into taking early childhood development interventions to scale</div>
+            <div class="project-meta">FCDO · £16,873,644 · 5-country programme · <strong>International PI</strong> for Ghana</div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-years">2023–2028</div>
+          <div>
+            <div class="project-title">NIHR PRP: Policy Research Unit Healthy Weight</div>
+            <div class="project-meta">NIHR · £5,486,726 · <strong>Co-I</strong></div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-years">2023–2026</div>
+          <div>
+            <div class="project-title">ECON Study: Evaluating the impact of placement regulations on the convenience store sector</div>
+            <div class="project-meta">NIHR Public Health Research · £1,372,815 · <strong>Co-I</strong></div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-years">2021–2024</div>
+          <div>
+            <div class="project-title">Evaluating the Lively Minds ECCE Programme in Ghana</div>
+            <div class="project-meta">USAID · US$1,500,000 · <strong>Co-I</strong> (PI: O. Attanasio, S. Krutikova)</div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-years">2021–2024</div>
+          <div>
+            <div class="project-title">Improving development through play — Evaluation of a comprehensive ECCE programme at scale in Ghana</div>
+            <div class="project-meta">UK Medical Research Council · £1,100,000 · <strong>Co-I</strong> (PI: S. Krutikova)</div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-years">2021–2024</div>
+          <div>
+            <div class="project-title">Evaluation and co-creation to optimise uptake and benefits of the Healthy Start scheme</div>
+            <div class="project-meta">PRP Evaluation · £844,785 · <strong>Co-I</strong></div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-years">2019–2021</div>
+          <div>
+            <div class="project-title">Family and social effects on adoption of preventative health measures</div>
+            <div class="project-meta">ESRC Secondary Data Analysis Initiative · £299,530 · <strong>PI</strong></div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-years">2017–2020</div>
+          <div>
+            <div class="project-title">Community toilet use in slums — willingness to pay and the role of informational and supply side constraints</div>
+            <div class="project-meta">3ie · US$550,000 · <strong>PI</strong> (with A. Armand and O. Attanasio)</div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-years">2013–2018</div>
+          <div>
+            <div class="project-title">Sustainable Total Sanitation in Nigeria — implementation, learning, research, and influence on practice and policy</div>
+            <div class="project-meta">WaterAid / BMGF · US$1,113,930 · <strong>PI</strong></div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-years">2012–2018</div>
+          <div>
+            <div class="project-title">Early Childhood Development for the Poor: Impacting at Scale</div>
+            <div class="project-meta">NIH · US$2,242,585 · <strong>Co-I</strong></div>
+          </div>
+        </li>
+        <li class="project-item">
+          <div class="project-years">2012–2018</div>
+          <div>
+            <div class="project-title">Incentivizing Sanitation Uptake and Sustainable Usage through Microfinance</div>
+            <div class="project-meta">SIEF (World Bank) · US$601,508 · <strong>Co-I</strong></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CV -->
+    <section id="cv">
+      <div class="section-label">05 — Curriculum Vitae</div>
+      <h2 class="section-title">CV</h2>
+
+      <a class="cv-download" href="CV_-_Britta_Augsburg_-_Jan_2026.docx" download>
+        ↓ Download Full CV (January 2026)
+      </a>
+
+      <div class="cv-section">
+        <h3>Academic Employment</h3>
+        <div class="cv-row">
+          <div class="cv-year">2018–</div>
+          <div class="cv-desc"><em>Associate Director</em>, Institute for Fiscal Studies, London</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2012–2018</div>
+          <div class="cv-desc"><em>Senior Research Economist</em>, IFS — Centre for the Evaluation of Development Policies (EDePo)</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2009–2012</div>
+          <div class="cv-desc"><em>Research Economist</em>, IFS — EDePo</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2008–2009</div>
+          <div class="cv-desc"><em>Postdoctoral Fellow</em>, IFS — EDePo</div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <h3>Education</h3>
+        <div class="cv-row">
+          <div class="cv-year">2009</div>
+          <div class="cv-desc"><em>PhD in Social Protection Policy</em>, University of Maastricht</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2005</div>
+          <div class="cv-desc"><em>Masters in Econometrics</em> (Doctorandus in Econometrie), University of Maastricht; Erasmus Visiting Scholar, University of Toulouse</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year">2002</div>
+          <div class="cv-desc"><em>Propedeuse in Econometrics</em>, University of Maastricht</div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <h3>Editorial &amp; Advisory</h3>
+        <div class="cv-row">
+          <div class="cv-year"></div>
+          <div class="cv-desc"><em>Co-Editor Special Issues:</em> Journal of Development Economics (Sanitation); World Development (WASH barriers); Journal of WASH for Development (2020)</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year"></div>
+          <div class="cv-desc"><em>Associate Editor:</em> Oxford Development Studies</div>
+        </div>
+        <div class="cv-row">
+          <div class="cv-year"></div>
+          <div class="cv-desc"><em>Advisory roles:</em> U.S. GAO, GiveWell, DHSC, Ghana Ministry of Education</div>
+        </div>
+      </div>
+
+      <div class="cv-section">
+        <h3>Selected Journal Refereeing</h3>
+        <div class="cv-row">
+          <div class="cv-year"></div>
+          <div class="cv-desc" style="font-size:0.85rem;">Econometrica, European Economic Review, Journal of Human Resources, Journal of Development Economics, Economic Journal, Journal of the European Economic Association, Journal of Environmental Economics and Management, World Development, BMJ Global Health, Paediatrics, World Bank Economic Review, and others.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-label">06 — Contact</div>
+      <h2 class="section-title">Contact &amp; Affiliations</h2>
+
+      <div class="contact-grid">
+        <dl class="contact-block">
+          <dt>Email</dt>
+          <dd><a href="mailto:britta_a@ifs.org.uk">britta_a@ifs.org.uk</a></dd>
+          <dt>Address</dt>
+          <dd>Institute for Fiscal Studies<br>2 Marylebone Road<br>London NW1 4DF, UK</dd>
+          <dt>Telephone</dt>
+          <dd>+44 20 7291 4800</dd>
+          <dt>IFS Profile</dt>
+          <dd><a href="http://www.ifs.org.uk/people/profile/417" target="_blank">ifs.org.uk/people/profile/417</a></dd>
+        </dl>
+
+        <div>
+          <p style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:0.8rem;">Other Affiliations</p>
+          <ul class="affiliations-list">
+            <li>NIHR Healthy Weight Policy Research Unit (HWPRU) at UCL — Co-lead, Economic Circumstances &amp; Outcomes workstream</li>
+            <li>University College London, Department of Economics — Associate Staff</li>
+            <li>FCDO Thrive Ghana — International PI</li>
+            <li>Centre for European Research in Microfinance (CERMi), ULB Brussels — Associated Senior Researcher</li>
+            <li>Development Research Centre, University of Kent (DeReCK) — Research Fellow</li>
+            <li>UNU-MERIT, Maastricht — Affiliated Researcher</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Britta Augsburg &mdash; Institute for Fiscal Studies</span>
+      <span>Last updated: January 2026</span>
+    </footer>
+
+  </main><!-- /main -->
+</div><!-- /site-wrapper -->
+
+<script>
+  // ─── Filter buttons
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const pubItems   = document.querySelectorAll('#pub-list .pub-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      pubItems.forEach(item => {
+        if (f === 'all' || item.dataset.cat === f) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // ─── Active nav link on scroll
+  const sections = document.querySelectorAll('section[id], header[id]');
+  const navLinks  = document.querySelectorAll('.sidebar nav a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
