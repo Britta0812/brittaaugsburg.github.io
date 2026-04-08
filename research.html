@@ -404,7 +404,7 @@
       font-size: 1rem;
       font-style: italic;
       color: var(--ink);
-      line-height: 1.45;
+      line-height: 1.6;
       margin-bottom: 0.25rem;
     }
     .pub-title a {
@@ -430,6 +430,7 @@
       border-radius: 2px;
       margin-left: 0.4rem;
       vertical-align: middle;
+      white-space: nowrap;
     }
     .pub-tag.wash  { background: rgba(44,95,90,0.1);  color: var(--wash); }
     .pub-tag.stim  { background: rgba(160,106,32,0.1); color: var(--stim); }
@@ -636,7 +637,7 @@
   
   <main class="main">
     <!-- RESEARCH INTRO -->
-    <section id="research-intro" style="padding: 3rem 4rem 2rem; border-bottom: 2px solid var(--rule);">
+    <section id="research-intro" style="padding: 3rem 4rem 2rem; border-bottom: none;">
       <div class="section-label">Research</div>
       <h2 class="section-title">Research Areas</h2>
 
@@ -648,7 +649,7 @@
     </section>
 
     <!-- PUBLICATIONS -->
-    <section id="publications" style="padding-bottom:0;">
+    <section id="publications" style="padding-bottom:0; border-bottom:none;">
       <div class="section-label">Filter by area</div>
       <div class="pub-filter">
         <button class="filter-btn active" data-filter="all">All</button>
@@ -687,7 +688,7 @@
         </p>
       </div>
 
-      <h3 style="font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:1.1rem;color:var(--ink);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--rule);" id="publications-heading">Publications</h3>
+      <h3 style="font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:1.3rem;color:var(--ink);margin-top:3rem;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);" id="publications-heading">Publications</h3>
       <ul class="pub-list" id="pub-list">
 
         <li class="pub-item" data-cat="wash">
@@ -857,9 +858,7 @@
       <!-- WORKING PAPERS subsection -->      </ul>
 
       <!-- WORKING PAPERS subsection -->
-      <h3 style="font-family:'Source Sans 3',sans-serif;font-weight:400;font-size:1.3rem;margin-top:3rem;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);">
-        <span id="working-papers">Advanced Working Papers &amp; Under Review</span>
-      </h3>
+      <h3 style="font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:1.3rem;color:var(--ink);margin-top:3rem;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule);" id="working-papers">Advanced Working Papers &amp; Under Review</h3>
       <ul class="pub-list" id="wp-list">
         <li class="pub-item" data-cat="wash">
           <div class="pub-content">
@@ -884,7 +883,7 @@
         </li>
         <li class="pub-item" data-cat="nutr stim">
           <div class="pub-content">
-            <div class="pub-title">Nutritional impacts of targeted food payments in early life</div><span class="pub-tag nutr">Nutrition</span><span class="pub-tag stim">ECD</span>
+            <div class="pub-title">Nutritional impacts of targeted food payments in early life<span class="pub-tag nutr">Nutrition</span><span class="pub-tag stim">ECD</span></div>
             <div class="pub-meta">With G. Conti, C. Farquharson, S. von Hinke, M. Luehrmann, A. McKendrick, L. Wang</div>
           </div>
         </li>
@@ -1488,7 +1487,7 @@
       font-size: 1rem;
       font-style: italic;
       color: var(--ink);
-      line-height: 1.45;
+      line-height: 1.6;
       margin-bottom: 0.25rem;
     }
     .pub-title a {
@@ -1514,6 +1513,7 @@
       border-radius: 2px;
       margin-left: 0.4rem;
       vertical-align: middle;
+      white-space: nowrap;
     }
     .pub-tag.wash  { background: rgba(44,95,90,0.1);  color: var(--wash); }
     .pub-tag.stim  { background: rgba(160,106,32,0.1); color: var(--stim); }
