@@ -21,7 +21,7 @@
       --accent3:   #8a5030;
       --gold:      #c8a060;
       --wash:      #2c6a60;
-      --stim:      #4a6a3a;
+      --stim:      #a06a20;
       --nutr:      #8a4828;
       --col-max:   860px;
     }
@@ -89,6 +89,20 @@
     .sidebar nav a:hover,
     .sidebar nav a.active { color: var(--gold); }
 
+
+    .subnav { padding: 0.2rem 0 0.4rem 0.6rem; }
+    .subnav a {
+      display: block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      padding: 0.3rem 0;
+      border-bottom: none;
+      transition: color 0.2s;
+    }
+    .subnav a:hover { color: var(--accent); }
     .sidebar-contact {
       margin-top: 1.2rem;
       border-top: 1px solid var(--rule);
@@ -394,7 +408,7 @@
       vertical-align: middle;
     }
     .pub-tag.wash  { background: rgba(44,95,90,0.1);  color: var(--wash); }
-    .pub-tag.stim  { background: rgba(74,92,58,0.1);  color: var(--stim); }
+    .pub-tag.stim  { background: rgba(160,106,32,0.1); color: var(--stim); }
     .pub-tag.nutr  { background: rgba(122,68,40,0.1); color: var(--nutr); }
 
     /* ─── PROJECTS / GRANTS ─── */
@@ -558,16 +572,15 @@
     <div class="sidebar-title">Associate Director<br><a href="https://www.ifs.org.uk" target="_blank" style="color:var(--accent);text-decoration:none;letter-spacing:0.12em;">Institute for Fiscal Studies</a></div>
     <nav>
       <a href="index.html">About</a>
-      <a href="publications.html">Publications</a>
-      <a href="projects.html">Projects</a>
+      <a href="research.html">Research</a>
       <a href="cv.html" class="active">CV</a>
     </nav>
     <div class="sidebar-contact">
       <a href="/cdn-cgi/l/email-protection#fd9f8f9489899ca29cbd949b8ed3928f9ad38896">
         <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-        <span class="sc-text"><span class="__cf_email__" data-cfemail="9efcecf7eaeaffc1ffdef7f8edb0f1ecf9b0ebf5">[email&#160;protected]</span></span>
+        <span class="sc-text"><span class="__cf_email__" data-cfemail="4725352e3333261826072e21346928352069322c">[email&#160;protected]</span></span>
       </a>
-      <a href="http://www.ifs.org.uk/people/profile/417" target="_blank">
+      <a href="https://ifs.org.uk/people/britta-augsburg" target="_blank">
         <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
         <span class="sc-text">IFS Profile</span>
       </a>
@@ -579,7 +592,7 @@
         <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12h6"/><path d="M9 8v8"/></svg>
         <span class="sc-text">ORCID</span>
       </a>
-      <a href="https://www.linkedin.com/in/britta-augsburg" target="_blank">
+      <a href="https://www.linkedin.com/in/britta-augsburg-3a868317b/" target="_blank">
         <svg class="sc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7"/><path d="M7 7v.01"/><path d="M11 10v7"/><path d="M11 13a3 3 0 0 1 6 0v4"/></svg>
         <span class="sc-text">LinkedIn</span>
       </a>
@@ -592,110 +605,15 @@
 
   
   <main class="main">
-    <!-- CV -->
-    <section id="cv">
+    <section style="padding: 4rem 4rem 3rem;">
       <div class="section-label">CV</div>
-      <h2 class="section-title">CV</h2>
-
-      <a class="cv-download" href="CV_-_Britta_Augsburg_-_Jan_2026.docx" download>
-        ↓ Download Full CV (January 2026)
+      <h2 class="section-title">Curriculum Vitae</h2>
+      <p style="font-size:1rem; line-height:1.75; color:var(--ink-light); margin-bottom:2rem; max-width:600px;">
+        My full CV is available to download below. Last updated January 2026.
+      </p>
+      <a class="cv-download" href="CV_Britta_Augsburg.pdf" download>
+        ↓ Download CV (PDF)
       </a>
-
-      <div class="cv-section">
-        <h3>Academic Employment</h3>
-        <div class="cv-row">
-          <div class="cv-year">2018–</div>
-          <div class="cv-desc"><em>Associate Director</em>, Institute for Fiscal Studies, London</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-year">2012–2018</div>
-          <div class="cv-desc"><em>Senior Research Economist</em>, IFS — Centre for the Evaluation of Development Policies (EDePo)</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-year">2009–2012</div>
-          <div class="cv-desc"><em>Research Economist</em>, IFS — EDePo</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-year">2008–2009</div>
-          <div class="cv-desc"><em>Postdoctoral Fellow</em>, IFS — EDePo</div>
-        </div>
-      </div>
-
-      <div class="cv-section">
-        <h3>Education</h3>
-        <div class="cv-row">
-          <div class="cv-year">2009</div>
-          <div class="cv-desc"><em>PhD in Social Protection Policy</em>, University of Maastricht</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-year">2005</div>
-          <div class="cv-desc"><em>Masters in Econometrics</em> (Doctorandus in Econometrie), University of Maastricht; Erasmus Visiting Scholar, University of Toulouse</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-year">2002</div>
-          <div class="cv-desc"><em>Propedeuse in Econometrics</em>, University of Maastricht</div>
-        </div>
-      </div>
-
-      <div class="cv-section">
-        <h3>Editorial &amp; Advisory</h3>
-        <div class="cv-row">
-          <div class="cv-year"></div>
-          <div class="cv-desc"><em>Co-Editor Special Issues:</em> Journal of Development Economics (Sanitation); World Development (WASH barriers); Journal of WASH for Development (2020)</div>
-        </div>
-        <div class="cv-row">
-          <div class="cv-year"></div>
-          <div class="cv-desc"><em>Advisory roles:</em> U.S. GAO, GiveWell, DHSC, Ghana Ministry of Education</div>
-        </div>
-      </div>
-
-      <div class="cv-section">
-        <h3>Selected Journal Refereeing</h3>
-        <div class="cv-row">
-          <div class="cv-year"></div>
-          <div class="cv-desc" style="font-size:0.85rem;">Econometrica, European Economic Review, Journal of Human Resources, Journal of Development Economics, Economic Journal, Journal of the European Economic Association, Journal of Environmental Economics and Management, World Development, BMJ Global Health, Paediatrics, World Bank Economic Review, and others.</div>
-        </div>
-      </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-label">Contact</div>
-      <h2 class="section-title">Contact &amp; Affiliations</h2>
-
-      <div class="contact-grid">
-        <dl class="contact-block">
-          <dt>Email</dt>
-          <dd><a href="/cdn-cgi/l/email-protection#8defffe4f9f9ecd2eccde4ebfea3e2ffeaa3f8e6"><span class="__cf_email__" data-cfemail="a6c4d4cfd2d2c7f9c7e6cfc0d588c9d4c188d3cd">[email&#160;protected]</span></a></dd>
-          <dt>Address</dt>
-          <dd>Institute for Fiscal Studies<br>2 Marylebone Road<br>London NW1 4DF, UK</dd>
-          <dt>Telephone</dt>
-          <dd>+44 20 7291 4800</dd>
-          <dt>IFS Profile</dt>
-          <dd><a href="http://www.ifs.org.uk/people/profile/417" target="_blank">ifs.org.uk/people/profile/417</a></dd>
-        </dl>
-
-        <div>
-          <p style="font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:0.8rem;">Other Affiliations</p>
-          <ul class="affiliations-list">
-            <li>NIHR Healthy Weight Policy Research Unit (HWPRU) at UCL — Co-lead, Economic Circumstances &amp; Outcomes workstream</li>
-            <li>University College London, Department of Economics — Associate Staff</li>
-            <li>FCDO Thrive Ghana — International PI</li>
-            <li>Centre for European Research in Microfinance (CERMi), ULB Brussels — Associated Senior Researcher</li>
-            <li>Development Research Centre, University of Kent (DeReCK) — Research Fellow</li>
-            <li>UNU-MERIT, Maastricht — Affiliated Researcher</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    
-    <footer class="footer">
-      <span>Britta Augsburg &mdash; Institute for Fiscal Studies</span>
-      <span>Last updated: January 2026</span>
-    </footer>
-  </main>
-</div>
-
-</body>
-</html>
+>

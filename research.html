@@ -680,6 +680,13 @@
         </p>
       </div>
 
+      <div id="area-desc-other" class="area-desc" style="display:none; margin:1rem 0 1.5rem; padding:1.2rem 1.4rem; background:var(--paper-warm); border-left:3px solid #4a4a80;">
+        <h3 style="font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:1.05rem;color:var(--ink);margin-bottom:0.6rem;">Other</h3>
+        <p style="font-size:0.95rem; line-height:1.75; color:var(--ink-light); max-width:860px;">
+          I began my research career studying microfinance in India, Mongolia, and Bosnia and Herzegovina. This work shaped my research trajectory, from early data collection and grant funding to my first publications, and led to subsequent work on sanitation through the study of microloans for household investment. I have also done work on COVID-19, studying debunking of misinformation and vaccine acceptance and hesitancy.
+        </p>
+      </div>
+
       <h3 style="font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:1.1rem;color:var(--ink);margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--rule);" id="publications-heading">Publications</h3>
       <ul class="pub-list" id="pub-list">
 
@@ -1027,7 +1034,8 @@
   var areaDescs = {
     'wash': document.getElementById('area-desc-wash'),
     'stim': document.getElementById('area-desc-stim'),
-    'nutr': document.getElementById('area-desc-nutr')
+    'nutr': document.getElementById('area-desc-nutr'),
+    'other': document.getElementById('area-desc-other')
   };
 
   function getItems() {
